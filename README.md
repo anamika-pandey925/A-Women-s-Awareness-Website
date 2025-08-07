@@ -39,6 +39,10 @@ Crime statistics (NCRB data)
 
 Gender-based violence trends
 
+#Output
+<img width="1342" height="597" alt="image" src="https://github.com/user-attachments/assets/41e81d96-62ad-44b0-a6ec-81adaccaf76e" />
+
+
 Regional crime heatmaps and case studies
 
 Technological and legislative gaps in women’s safety
