@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women Safety - Hospitals by Area</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: navy;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .filter-section {
+            margin-bottom: 20px;
+        }
+
+        select {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+
+        .hospital-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .hospital-item {
+            background: #fff;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .hospital-item h3 {
+            margin: 0 0 10px;
+            color: navy;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Women Safety - Hospitals by Area</h1>
+    </header>
+
+    <div class="container">
+        <div class="filter-section">
+            <label for="areaSelect"><strong>Select Your Area:</strong></label>
+            <select id="areaSelect">
+                <option value="all">All Areas</option>
+                <option value="City Center">City Center</option>
+                <option value="West Side">West Side</option>
+                <option value="East Side">East Side</option>
+            </select>
+        </div>
+
+        <ul class="hospital-list" id="hospitalList">
+            <!-- Hospitals will be added dynamically here -->
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Women Safety Initiative. Stay Safe!</p>
+    </footer>
+
+    <script>
+        // Hospital data
+        const hospitals = [
+            { name: "Acharya Shree Bhikshu Hospital", area: "City Center", address: "Moti Nagar New Delhi-110015", contact: "011-25423011", Email:"acharyashreehospital2018@gmail.com"},
+            { name: "Ambedkar Nagar Hospital", area: "City Center", address: "Block-B, Sector-5, Dakshinpuri, New Delhi--110062", contact: "011-2605201" },
+            { name: "Aruna Asaf Ali Govt. Hospital", area: "City Center", address: "5-Rajpur Road, Delhi-110054", contact: "011-23965532, 23964910"},
+            { name: "Attar Sain Jain Hospital", area: "City Center", address: "Community Centre, Keshavpuram Industrial Area, Lawrence Road, New Delhi-110035", contact: "27188342, 27153357, 27182707, 27188342" },
+            { name: "Guru TeghBahadur Hospital ", area: "West Side", address: "Dilshad Garden , Delhi Adjacent to Emergency Ward , In front of the Accident and Emergency Dept", contact: "9868399513", Email:"acharyashreehospital2018@gmail.com"},
+            { name: "Sanjay Gandhi Memorial Hospital", area: "West Side", address: "S Block Mangolpuri ,Delhi-110083", contact: "011-27921117, 27922843"},
+            { name: "Lal BahadurShastri Hospital", area: "West Side", address: "Khicripur , Delhi", contact: "9711901627"},
+            { name: "LokNayak Hospital", area: "West Side", address: "Jawaharlal Nehru Marg, New Delhi", contact: "Contact: 011-23233400,23232400" },
+            { name: "East Delhi Medical Centre", area: "East Side", address: "1/550, Grand Trunk Rd, East Ram Nagar, Mansarovar Park, Shahdara, New Delhi, Delhi, 110032", contact: "09410451045", Email:"acharyashreehospital2018@gmail.com"},
+            { name: "Kailash Deepak Hospital", area: "East Side", address:"5, Vikas Marg, Institutional Area, II, New Delhi, Delhi, 110092", contact: " 011 3535 3535"},
+            { name: "Aarogya Hospital East Delhi", area: "East Side", address: "32, Vikas Marg, Chitra Vihar, Swasthya Vihar, New Delhi, Delhi, 110092", contact: "093693 00300"},
+            { name: "Shanti Mukand Hospital", area: "East Side", address: "2, Institutional Area, Bhartendu Harish Chandra Marg, Vikas Marg Extension, Karkardooma, Delhi, 110092", contact: "011 4727 6600" },
+
+        ];
+
+        const areaSelect = document.getElementById('areaSelect');
+        const hospitalList = document.getElementById('hospitalList');
+
+        // Function to display hospitals based on selected area
+        function displayHospitals(area) {
+            hospitalList.innerHTML = ''; // Clear the list first
+
+            const filteredHospitals = area === 'all'
+                ? hospitals // Show all hospitals
+                : hospitals.filter(hospital => hospital.area === area); // Filter by area
+
+            if (filteredHospitals.length === 0) {
+                hospitalList.innerHTML = `<li>No hospitals found in this area.</li>`;
+                return;
+            }
+
+            // Add hospitals dynamically to the list
+            filteredHospitals.forEach(hospital => {
+                const listItem = document.createElement('li');
+                listItem.className = 'hospital-item';
+                listItem.innerHTML = `
+                    <h3>${hospital.name}</h3>
+                    <p><strong>Address:</strong> ${hospital.address}</p>
+                    <p><strong>Contact:</strong> ${hospital.contact}</p>
+                `;
+                hospitalList.appendChild(listItem);
+            });
+        }
+
+        // Initial display (show all hospitals)
+        displayHospitals('all');
+
+        // Event listener for dropdown change
+        areaSelect.addEventListener('change', () => {
+            const selectedArea = areaSelect.value;
+            displayHospitals(selectedArea);
+        });
+    </script>
+</body>
+</html>

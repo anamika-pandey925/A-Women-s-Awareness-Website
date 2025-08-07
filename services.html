@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+header {
+  background-color: navy;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+h1 {
+  margin: 0;
+}
+
+main {
+  padding: 1rem;
+}
+
+.services {
+  margin-top: 1rem;
+}
+
+.service {
+  background-color: white;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  background-color: navy;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: navy;
+}
+
+ul {
+  padding-left: 1.5rem;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Women's Safety Services</h1>
+  </header>
+  
+  <main>
+    <section class="services">
+      <h2>Available Services</h2>
+      <div class="service">
+        <button id="sosButton">Emergency SOS</button>
+        <p>Send an alert to your emergency contacts with your location.</p>
+      </div>
+      
+      <div class="service">
+        <button id="locationButton">Share Location</button>
+        <p>Share your live location with your trusted contacts.</p>
+      </div>
+      
+      <div class="service">
+        <h3>Helpline Numbers:</h3>
+        <ul>
+          <li>Police: 112</li>
+          <li>Women Helpline: 1091</li>
+          <li>Ambulance: 102</li>
+        </ul>
+      </div>
+      
+      <div class="service">
+        <h3>Safety Tips:</h3>
+        <p>Always share your travel plans with someone you trust. Keep emergency contacts updated.</p>
+      </div>
+    </section>
+  </main>
+  
+  <script>
+    // SOS Button Functionality
+document.getElementById('sosButton').addEventListener('click', function() {
+  alert('SOS Alert Sent! Your location has been shared with emergency contacts.');
+});
+
+// Share Location Functionality
+document.getElementById('locationButton').addEventListener('click', function() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+      alert(`Location shared: Latitude ${latitude}, Longitude ${longitude}`);
+    });
+  } else {
+    alert('Geolocation is not supported by your browser.');
+  }
+});
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women Safety Website</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" type="text/css">
+   <style>
+        /* General Reset */
+        body {
+            font-family: "Times New Roman", serif; /* Changed font to Times New Roman */
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: flex-start; /* Changed to flex-start to position content */
+            background: rgba(0,0,0,0.7) url("images/BG1.jpg");
+            background-blend-mode: darken ;
+            background-attachment: fixed;
+            background-size: cover;
+            margin: 0;
+            font-family: 'Georgia', 'Times New Roman', Times, serif;
+            background-color: #3c88d4;
+            color: whitesmoke;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-left img {
+            width: 50px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .nav-left h1 {
+            font-size: 1.5rem;
+            color: rgb(38, 38, 188);
+            margin: 0;
+            font-weight: bold;
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            position: relative;
+            padding: 10px 20px;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        ul li .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+            z-index: 1;
+            top: 40px;
+            left: 0;
+        }
+
+        ul li .dropdown-content a {
+            padding: 10px 15px;
+            display: block;
+            text-decoration: none;
+            color: black;
+            font-size: 13px;
+        }
+
+        ul li .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        ul li:hover .dropdown-content {
+            display: block;
+        }
+
+        /* SOS Button */
+        .sos-circle-button {
+            position: absolute;
+            top: 80px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border: none;
+            border-radius: 50%;
+            background-color: red;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 1001;
+            transition: background-color 0.3s ease;
+            
+        }
+
+        .sos-circle-button:hover {
+            background-color: darkred;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+            color: white
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+            animation: fadeIn 2s ease-out;
+            color:white;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin: 20px 0;
+            animation: fadeIn 3s ease-out;
+            color:white;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: rgba(153, 153, 234, 0.726);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #033eb3;
+        }
+        
+        .content-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+            max-width: 1269px;
+            background-color: white;
+            padding: 50px 40px;
+    
+        }
+
+        .content-box {
+            width: 50%;
+        }
+
+        .content-box h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: black;
+        }
+
+        .content-box h1 .highlight {
+            color: #FF5722;
+        }
+
+        .content-box p {
+            font-size: 1.2rem;
+            color: grey;
+            margin-bottom: 15px;
+        }
+
+        .image-container {
+            width: 35%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding-left: 40%;
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* About Us Mission */
+        .mission {
+            background-color:#001f3d ; /* Navy Blue Background */
+            padding: 40px;
+            color: white;
+            text-align: center;
+        }
+
+        .mission h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-out;
+            color:white;
+        }
+
+        .mission p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            animation: fadeIn 3s ease-out;
+            color:white;
+        }
+        .stat-container {
+            width: 100%;
+            overflow: hidden; /* Hides the content overflowing the container */
+        }
+
+        .marquee {
+            display: flex;
+            animation: marquee 20s linear infinite; /* Add animation for the marquee effect */
+        }
+
+        .stat-item {
+            flex-shrink: 0; /* Prevent the items from shrinking */
+            padding: 10px;
+            white-space: nowrap; /* Ensures content stays on one line */
+            color:white;
+        }
+        .stat-item h2{
+            color:white;
+        }
+
+        .stat-item p{
+            text-align: center;
+            color:white
+        }
+
+        @keyframes marquee {
+        0% {
+           transform: translateX(100%); /* Start the content off-screen to the right */
+           }
+         100% {
+           transform: translateX(-100%); /* Move content off-screen to the left */
+             }
+        }
+
+        @media (max-width: 768px) {
+            .content-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .content-box {
+                width: 100%;
+            }
+
+            .image-container {
+                width: 100%;
+            }
+
+            .stat-item h2 {
+                font-size: 1rem;
+            }
+        }
+     
+        
+        .cont {
+            margin: 50px auto;
+            background-color:white ; /* Navy Blue Background */
+        }
+
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color:black;
+        }
+
+        p {
+            font-size: 18px;
+            text-align: justify;
+            margin-bottom: 20px;
+            padding: 10px 10px;
+            color:black;
+        }
+
+        .highlight {
+            color: navy;
+            font-weight: bold;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .crime, .real-story {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .crime ul, .real-story ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
+
+        .crime h3, .real-story h2 {
+            color: #f39c12;
+            border-bottom: 2px solid #f39c12;
+            padding-bottom: 0.5rem;
+        }
+
+        .crime img, .real-story img {
+            width: 40%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        .crime img{
+            padding-right: 100px;
+        }
+        .real-story p{
+            color: white;
+        }
+        .real-story h6 {
+            color: white;
+            font-weight: bold;
+        }
+
+        button {
+            display: inline-block;
+            background: #f39c12;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            background: #d35400;
+        }
+
+        .fade-in {
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    
+
+        /* Services Section */
+        .services {
+            background-color:#001f3d;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-out;
+            color: white;
+        }
+
+        .service-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .service-item {
+            width: 45%;
+            margin-bottom: 20px;
+            background-color: navy;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .service-item p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color:white;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .service-item {
+                width: 100%;
+            }
+        }
+
+        /* Keyframe Animation for Fade In */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .support {
+            background-color: #001f3d; /* Navy Blue Background */
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .support h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: white;;
+        }
+        .support p{
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .text-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 60%;
+        }
+
+        .column {
+            background-color: rgba(27, 55, 138, 0.79);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+        }
+
+        .column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .column p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .image-section {
+            width: 38%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+            padding: 10px 0;
+        }
+
+        .image-section img:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .image-section img:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .text-section, .image-section {
+                width: 100%;
+                text-align: center;
+            }
+
+            .text-section {
+                order: 2;
+            }
+
+            .image-section {
+                order: 1;
+                margin-bottom: 20px;
+            }
+        }
+        
+        .con {
+            animation: fadeIn 1.2s ease-in-out;
+            padding: 40px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #001f3d;
+        }
+
+        .content {
+            padding: 30px;
+            max-width: 50%;
+        }
+
+        .content h1 {
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #fff;
+        }
+
+        .list {
+            list-style: none;
+            padding: 0;
+            counter-reset: item;
+        }
+
+        .list li {
+            font-size: 18px;
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 40px;
+            animation: slideIn 0.6s ease-in-out;
+        }
+
+        .list li::before {
+            content: counter(item);
+            counter-increment: item;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            background-color: #007BFF;
+            color: #fff;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+
+        .list li::after {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 30px;
+            width: 2px;
+            height: 30px;
+            background-color: #007BFF;
+        }
+
+        .list li:last-child::after {
+            display: none;
+        }
+
+        .image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background-color: #001f3d;
+            max-width: 40%;
+        }
+
+        .image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            animation: zoomIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(1.2); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .respect {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px;
+            animation: fadeIn 1.2s ease-in-out;
+            padding: 40px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #001f3d;
+
+        }
+
+        .heading{
+            padding: 30px;
+            max-width: 50%;
+
+        }
+
+        .heading h2{
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #fff;
+        }
+
+        .tent {
+            flex: 1;
+        }
+
+        .tent ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tent li {
+           margin: 15px 0;
+           font-size: 18px;
+        }
+
+        .arrow {
+           margin-right: 10px;
+           color: #007BFF;
+        }
+
+        .picture {
+           flex: 1;
+           text-align: right;
+        }
+
+        .picture img {
+           max-width: 100%;
+           height: auto;
+           border-radius: 10px;
+        }
+
+        @keyframes arrow-animation {
+        0% {
+           transform: translateX(-10px);
+         }
+        50% {
+           transform: translateX(10px);
+         }
+        100% {
+           transform: translateX(-10px);
+         }
+        }
+
+       .arrow {
+           animation: arrow-animation 1s infinite;
+        }
+        /* Footer Styles */
+        footer {
+    
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+        footer p{
+            text-align: center;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        .social-icons a {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #ffdd57; /* Light yellow */
+        }
+
+
+        
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-left">
+            <img src="images/logo.png" alt="Logo">
+            <h1>Suraksha</h1>
+        </div>
+        <ul>
+            <li class="dropdown">
+                <a href="#">Who Are We</a>
+                <div class="dropdown-content">
+                    <a href="about.html">About</a>
+                    <a href="our mission.html">Our Mission</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Policy</a>
+                <div class="dropdown-content">
+                    <a href="workplace safety.html">Workplace Safety</a>
+                    <a href="helplines and support.html">Helplines and Support</a>
+                    <a href="training & awareness.html">Training & Awareness</a>
+                    <a href="flexible policies.html">Flexible Policies</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Impacts</a>
+                <div class="dropdown-content">
+                    <a href="change in safety.html">Change in Safety</a>
+                    <a href="impacting change.html">Impacting Change</a>
+                    <a href="facilitating&culture.html">Facilitating & Culture</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Take Action</a>
+                <div class="dropdown-content">
+                    <a href="report.html">Report</a>
+                    <a href="strict legal actions.html">Strict Legal Actions</a>
+                    <a href="contact us.html">Contact Us</a>
+                </div>
+            </li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="Chatbot.html">Chatbot</a></li>
+        </ul>
+    </nav>
+
+    <!-- SOS Button -->
+    <button class="sos-circle-button" id="sosButton" style="padding: 10px 0;">SOS</button>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>WELCOME TO SURAKSHA</h1><br><br>
+        <p>Your Voice, Your Safety, Our Responsibility.</p><br>
+        <P>SURAKSHA aims to provide a comprehensive overview of the Women Safety Program, 
+         highlighting the innovative strategies and technological advancements being implemented to 
+         create a safer environment for women in the Our Urban and Ruler Society.</P>
+        <a href="#learn-more" class="btn">Learn More</a><br><br><br>
+        <p>You are Strong, You are Capable, You are Safe.</p>
+    </div>
+    
+    <div class="content-container">
+    <div class="content-box" id="contentBox">
+      <div data-aos="zoom-in">
+        <h1>
+            <span class="highlight">WHAT IS</span> SURAKSHA <span class="highlight">?</span>
+        </h1>
+      </div>
+      <div data-aos="fade-down"data-aos-easing="linear"data-aos-duration="2500">  
+        <p> SURAKSHA is a platform dedicated to women's safety and empowerment, aimed at creating a fear-free society. This platform offers the best educational support for women in both urban and rural areas, addressing the critical issue of women's safety due to increasing violence, particularly in urban settings.</p>
+      </div> 
+      <div data-aos="fade-up"data-aos-duration="3000">  
+        <p>Ensuring women's safety in smart cities is essential, yet despite technological advancements, it continues to be a significant global challenge. Although law enforcement keeps criminal records, they are not readily accessible.</p>
+      </div>
+    </div>
+
+    <div class="image-container">
+      <div data-aos="fade-left">
+        <img src="images/Empowered.jpg" alt="Empowered Women"> 
+        <img src="images/What is Matr Surakh Imag.png" alt="What is Matri Suraksha">
+      </div>  
+    </div>
+</div>
+    
+    <!-- About Us Mission Section -->
+    <div class="mission">
+        <h2>About Our Mission</h2>
+        <p>We are committed to creating a safer world for all, especially for women and girls. We actively prevent gender-based violence through data-driven, united actions taken by individuals, communities, and institutions. Together, we will make a significant impact.</p>   
+        <p>We strive to prevent violence, support and advocate for survivors, and empower women to reach their full potential.</p>
+    </div>
+    
+    <div class="stat-container">
+    <div class="marquee">
+        <div class="stat-item">
+            <h2>1 in 3 women will suffer some form of sexual violence at least once in their lifetime.</h2>
+        </div>
+        <div class="stat-item">
+            <h2>80% of sexual assault cases are not reported, creating an institutional data gap.</h2>
+        </div>
+        <div class="stat-item">
+            <h2>Every 15 minutes, a woman is raped in India.</h2>
+            <p>National Crime Report Bureau (India)</p>
+        </div>
+        <div class="stat-item">
+            <h2>Only 8.46% of legislative assembly seats are held by women.</h2>
+            <p>International Labour Organization</p>
+        </div>
+        <div class="stat-item">
+            <h2>Women only represent 23% of the labour force in India.</h2>
+            <p>International Labour Organization</p>
+        </div>
+    </div>
+</div>
+<div class="cont">
+    <div data-aos="zoom-in">
+    <h1>Accident Case Story</h1>
+    <h2>Efforts and Challenges in Addressing Women’s Safety in India</h2>
+    
+    <p>Over the past <span class="highlight">seven years</span>, India has witnessed significant efforts to address women’s safety. However, challenges persist due to <span class="highlight">socio-economic</span>, <span class="highlight">cultural</span>, and <span class="highlight">geographical</span> factors.</p>
+    
+    <p>Despite new laws, initiatives, and technological interventions, women in both urban and rural areas continue to face threats of harassment, domestic violence, and assault. The social fabric remains vulnerable, and more work is needed to address these persistent issues.</p>
+    </div>
+</div>
+
+    <header>
+        <h1>Women Safety & Crime Statistics</h1>
+    </header>
+    <div class="container">
+        <div class="crime">
+            <h3>Key Statistics on Crimes Against Women (2017-2023)</h3>
+            <ul>
+                <li>A consistent rise in crimes against women was reported in both rural and urban areas.</li>
+                <li>The National Crime Records Bureau (NCRB) reports a disturbing trend of rising crimes against women in India. In 2022, there were 445,256 cases reported, representing an increase of over 31% from 2014. Of these, 7.1% were rape cases.</li>
+                <li><strong>Data Source:</strong> National Crime Records Bureau (NCRB), Rajasthan Police Reports.</li>
+            </ul>
+            <img src="images/Picture4.png" alt="Crime Stats">
+            <img src="images/Picture5.png" alt="Crime Analysis">
+            <h3>Urban vs. Rural Women’s Safety</h3>
+            <ul>
+                <li>Urban areas report higher cases of workplace harassment and cybercrime, while rural regions face more domestic violence and human trafficking.</li>
+                <li>Case Study: Udaipur (urban) – high-profile incidents of workplace harassment in tech firms.</li>
+                <li>Case Study: Barmer (rural) – alarming rates of domestic violence and honor killings due to socio-cultural pressures.</li>
+            </ul>
+            <h3>Challenges in Implementing Women’s Safety Programs</h3>
+            <ul>
+                <li>Lack of awareness and digital literacy in rural areas hinders the effective use of safety apps.</li>
+                <li>Insufficient police resources and delayed response times, particularly in remote regions.</li>
+                <li>Cultural stigma still prevents women from reporting crimes, particularly sexual violence.</li>
+            </ul>
+        </div>
+
+        <div class="real-story">
+            <h2>Stories of Sexual Harassment and Abuse</h2>
+            <p class="fade-in">"I was with my 14-year-old sister, walking to the station in Vikhroli when I felt unsafe and scared. A group of young boys started saying things like 'Kya chal rahi hai yaha' and harassing us. This was in the afternoon. In daylight. In a crowd of many people. No one said anything. I turned around and gave them some gaalis (curse words) and that's when everyone intervened. They scolded me! They asked me why I was here! I felt so bad because I thought they would obviously side with me. How can we even go to the police when no one supports us in public?"</p>
+            <img src="images/Kolkata.jpg" alt=" Kolkata">
+            <h6>Vaishali, Junior College Student</h6>
+            <p>The Kolkata rape and murder case involving Dr. Moumita Debnath shocked the nation. Dr. Moumita, a 31-year-old postgraduate trainee doctor, was found dead on August 9, 2024, in the seminar hall of R.G. Kar Medical College and Hospital, Kolkata. Her semi-naked body bore signs of severe injuries and struggle, indicating a brutal assault.</p>
+            <img src="images/Dr Moumita.jpeg" alt="Dr Moumita">
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <div class="services">
+        <h2>Our Services and Resources</h2>
+        <div class="service-items">
+            <div class="service-item" data-aos="fade-up">
+                <h3>Crisis Intervention</h3>
+                <p>24/7 hotline for immediate support and guidance.</p>
+            </div>
+            <div class="service-item" data-aos="fade-up" data-aos-delay="100">
+                <h3>Legal Advocacy</h3>
+                <p>Support and Resources for navigating legal processes.</p>
+            </div>
+            <div class="service-item" data-aos="fade-up" data-aos-delay="200">
+                <h3>Counselling and Therapy</h3>
+                <p>Trauma-informed care for healing and empowerment.</p>
+            </div>
+            <div class="service-item" data-aos="fade-up" data-aos-delay="300">
+                <h3>Educational Workshops</h3>
+                <p>Promoting awareness, skills, and knowledge.</p>
+            </div>
+        </div>
+    </div>
+    <!--Support Section-->
+    <div class="support">
+        <h2>Survivor Support and Advocacy</h2>
+        <div class="container">
+            <div class="text-section">
+                <div class="column" id="compassionate-listening">
+                    <h3>Compassionate Listening</h3>
+                    <p>We provide a safe and confidential space for survivors to share their experiences.</p>
+                </div>
+                <div class="column" id="legal-medical-assistance">
+                    <h3>Legal and Medical Assistance</h3>
+                    <p>We help survivors navigate legal and medical systems.</p>
+                </div>
+                <div class="column" id="support-groups">
+                    <h3>Support Groups</h3>
+                    <p>Connecting survivors with others who understand.</p>
+                </div>
+            </div>
+            <div class="image-section">
+                <img src="images/support1.jpg" alt="Support1 Image" width="500px">
+                <img src="images/support.jpg" alt="Support Image">
+            </div>
+        </div>
+    </div>
+    
+    <div class="con">
+        <div class="content">
+            <h1>Empowering Women through Education</h1>
+            <ol class="list">
+                <li>Workshops on self-defense, safety awareness, and healthy relationships.</li>
+                <li>Educational materials and resources on women's rights and empowerment.</li>
+                <li>Public awareness campaigns to challenge societal norms and attitudes.</li>
+            </ol>
+        </div>
+        <div class="image">
+            <img src="images/empower.jpg" alt="Empowering Women">
+        </div>
+    </div>
+    
+  <div class="respect">
+    <div class="heading">
+        <h2>Fostering a Culture of Respect and Equality</h2>
+        <ul class="tent">
+           <li><span class="arrow">&#8594;</span> Advocating for legislation and policies that promote gender equality.</li>
+           <li><span class="arrow">&#8594;</span> Working with schools, businesses, and communities to create a culture of respect.</li>
+           <li><span class="arrow">&#8594;</span> Challenging gender stereotypes and babies.</li>
+      </ul>
+    </div>
+    <div class="picture">
+      <img src="images/respect.png" alt="Respect culture">
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Follow us on</p>
+    <div class="social-icons">
+        <a href="https://wa.me/" target="_blank" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://instagram.com/" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://facebook.com/" target="_blank" title="Facebook">
+            <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://telegram.org/" target="_blank" title="Telegram">
+            <i class="fab fa-telegram"></i>
+        </a>
+    </div>
+    <p>&copy; 2025 Suraksha. All rights reserved.</p>
+</footer>
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200,
+            once: true
+        });
+    </script>
+     
+    <script>
+        // SOS Button Functionality
+    document.getElementById('sosButton').addEventListener('click', function() {
+      alert('SOS Alert Sent! Your location has been shared with emergency contacts.');
+    });
+    </script>
+ 
+</script>
+</body>
+</html>
+</body>
+</html>
+

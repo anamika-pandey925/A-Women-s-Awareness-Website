@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>मातृ सुरक्षा - Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #041666; /* Navy background */
+            color: white;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: white; /* White navbar background */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #041666; /* Navy text */
+            font-size: 18px;
+            font-weight: bold;
+            margin-left: 15px;
+            transition: transform 0.3s, color 0.3s;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+
+        .navbar a:hover {
+            
+            transform: scale(1.1);
+        }
+
+        header {
+            background-color: #041666; /* Navy background */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            border-bottom: 3px solid yellow;
+        }
+
+        .container {
+            margin: 40px auto;
+            padding: 20px;
+            max-width: 600px;
+            background-color: white; /* White background for container */
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            color: #041666; /* Navy text inside container */
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #041666;
+        }
+
+        select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 2px solid #041666;
+            border-radius: 5px;
+            background-color: white;
+            color: #041666;
+            font-size: 1rem;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: yellow;
+            box-shadow: 0 0 6px yellow;
+        }
+
+        .details {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #041666; /* Navy background for details */
+            color: white;
+            border-left: 6px solid yellow;
+            border-radius: 5px;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        .details h4 {
+            margin: 0 0 10px;
+            font-size: 1.5rem;
+            color: yellow;
+        }
+
+        .details p {
+            margin: 8px 0;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* Animation for fade-in effect */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="registration.html">Registration</a>
+    </div>
+
+    <header>
+        मातृ सुरक्षा - Contact Us
+    </header>
+
+    <div class="container">
+        <label for="dropdown">अपना विकल्प चुनें (Choose an option):</label>
+        <select id="dropdown">
+            <option value="">-- Select --</option>
+            <option value="need-help">सहायता की आवश्यकता (Need Help)</option>
+            <option value="contact-us">हमसे संपर्क करें (Contact Us)</option>
+        </select>
+
+        <div id="help-details" class="details">
+            <h4>सहायता की आवश्यकता (Need Help)</h4>
+            <p>यदि आपको तुरंत सहायता चाहिए, कृपया हमारे हेल्पलाइन नंबर पर संपर्क करें:</p>
+            <p><strong>हेल्पलाइन:</strong> 1800-123-4567</p>
+            <p><strong>ईमेल:</strong> help@matrusuraksha.org</p>
+        </div>
+
+        <div id="contact-details" class="details">
+            <h4>हमसे संपर्क करें (Contact Us)</h4>
+            <p>किसी भी प्रश्न या सुझाव के लिए, आप हमें निम्नलिखित माध्यमों से संपर्क कर सकते हैं:</p>
+            <p><strong>फ़ोन:</strong> +91-9876543210</p>
+            <p><strong>ईमेल:</strong> contact@matrusuraksha.org</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('dropdown').addEventListener('change', function () {
+            const value = this.value;
+
+            // Hide all details first
+            document.getElementById('help-details').style.display = 'none';
+            document.getElementById('contact-details').style.display = 'none';
+
+            // Show the selected option details with a fade-in effect
+            if (value === 'need-help') {
+                document.getElementById('help-details').style.display = 'block';
+            } else if (value === 'contact-us') {
+                document.getElementById('contact-details').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

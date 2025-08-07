@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women Safety - Police Stations by Area</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: navy;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+        }
+        .search-bar {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .search-bar input {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .result {
+            background-color: white;
+            margin: 10px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .result h3 {
+            margin: 0;
+            color: #333;
+        }
+        .result p {
+            margin: 5px 0;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Women Safety - Search Police Stations</h1>
+    </header>
+
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Enter area or state to search..." oninput="filterResults()">
+        </div>
+
+        <div id="results">
+            <!-- Delhi -->
+            <div class="result" data-area="delhi">
+                <h3>Women Police Station - Chanakyapuri</h3>
+                <p><strong>Address:</strong> Chanakyapuri, New Delhi, Delhi</p>
+                <p><strong>Contact:</strong> 011-26113761</p>
+            </div>
+            <div class="result" data-area="delhi">
+                <h3>Women Police Station - Dwarka</h3>
+                <p><strong>Address:</strong> Sector 23, Dwarka, New Delhi</p>
+                <p><strong>Contact:</strong> 011-28030056</p>
+            </div>
+
+            <!-- Haryana -->
+            <div class="result" data-area="haryana">
+                <h3>Women Police Station - Gurugram</h3>
+                <p><strong>Address:</strong> Satpaul Mittal Marg, Gurugram, Haryana</p>
+                <p><strong>Contact:</strong> 0124-2218057</p>
+            </div>
+
+            <!-- Rajasthan -->
+            <div class="result" data-area="rajasthan">
+                <h3>Women Police Station - Jaipur</h3>
+                <p><strong>Address:</strong> Near Hawa Mahal, Jaipur, Rajasthan</p>
+                <p><strong>Contact:</strong> 0141-2615623</p>
+            </div>
+
+            <!-- Punjab -->
+            <div class="result" data-area="punjab">
+                <h3>Women Police Station - Amritsar</h3>
+                <p><strong>Address:</strong> Katra Sher Singh, Amritsar, Punjab</p>
+                <p><strong>Contact:</strong> 0183-2552516</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function filterResults() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const results = document.querySelectorAll('.result');
+
+            results.forEach(result => {
+                const area = result.getAttribute('data-area');
+                if (area.includes(query)) {
+                    result.style.display = 'block';
+                } else {
+                    result.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
